@@ -1,4 +1,4 @@
-# Speech_Structure_Identifier
+# Child_Speech_Structure_Identifier
 This project aims for rule-based text classification to build a system that can identify children speech structure.
 The project is part of [Child Synactic Development Automatic Measurement]([url](https://github.com/obiasaidi/Child-Syn-Dev-Automatic-Measurement)). This identifier is built to create training data for the Child Syntactic Development Automatic Measurement project.
 

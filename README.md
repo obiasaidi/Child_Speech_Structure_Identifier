@@ -4,6 +4,8 @@ The project is part of [Child Synactic Development Automatic Measurement]([url](
 
 **Data Collection**: the data used is taken from [CHILDES English - North American data]([url](https://childes.talkbank.org/access/Eng-NA/)), using Brown and MacWhinney corpus.
 The corpus contains 5 children longitudinal speech ranging from 16 - 92 months old. The data is downloaded in .cha format.  
+
+**CHILDES_cleaning.py**: Functions containing regular expressions to clean noises from CHILDES transcription.
   
 **Structure class**:
 1. SV simple

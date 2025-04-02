@@ -18,3 +18,6 @@ def convert_age_month(age_str):
 
     except (ValueError, IndexError):  # Handle any potential errors when the age column is empty
         return None
+
+df['age_month'] = df['child_age'].apply(convert_age_month)
+df = df[['corpus', 'speaker', 'files', 'child_age', 'age_month', 'ori_speech']]

@@ -104,6 +104,6 @@ patterns = [
 
 patterns_to_drop = '|'.join(patterns)
 
-cleaned = data[~data['cleaned_speech'].str.match(patterns_to_drop, na=False)]
+df_cleaned = data[~data['cleaned_speech'].str.match(patterns_to_drop, na=False)]
 
 print("process done!!")

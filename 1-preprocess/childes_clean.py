@@ -81,3 +81,29 @@ def preprocess(line):
     line = line.strip()
     line = remove_multiple_spacing(line)
     return line #+ "\n"
+
+# Preprocess children speech
+df['cleaned_speech'] = df['ori_speech'].apply(preprocess)
+
+
+# Drop duplicate lines
+data = df.drop_duplicates(subset=['cleaned_speech'])
+
+# Dropping unnecessary speech for line
+patterns = [
+    r'^\s*[.?!]*\s$',                  # Speech with only punctuation                  
+    r"^\s*[\w@'-]*(\s*[.!?])?$",       # Speech with only one word         
+    r"^\s*[\w@\'-]*\s*xxx\s*[.!?]*$",  # Speech with only one word and xxx
+    r"^\s*[\w@\'-]*\s*yyy\s*[.!?]*$",  # Speech with only one word and yyy
+    r"^\s*[\w@\'-]*\s*www\s*[.!?]*$",  # Speech with only one word and www
+    r'^\s*xxx\s*[.!?]*$',              # Speech with only xxx         
+    r'^\s*yyy\s*[.!?]*$',              # Speech with only yyy 
+    r'^\s*www\s*[.!?]*$',              # Speech with only www 
+    r'^\s*$'                           # Empty or only-space string
+]
+
+patterns_to_drop = '|'.join(patterns)
+
+cleaned = data[~data['cleaned_speech'].str.match(patterns_to_drop, na=False)]
+
+print("process done!!")

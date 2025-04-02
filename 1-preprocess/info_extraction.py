@@ -47,3 +47,5 @@ def text_to_df(d_in):
     })
 
     return df
+
+df = text_to_df("put your dir here")

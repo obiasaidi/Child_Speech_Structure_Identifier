@@ -21,5 +21,5 @@ The corpus contains 5 children longitudinal speech ranging from 16 - 92 months o
 13. Interrogative-if
 14. Subordinate Clause
 
-  **1-preprocess**: Contains the codes to preprocess the dataset before being fed to the rule-based syn structure identifier.  
-  **2-structure_identification**: Contains the codes to parse, filter children speech, and the rule-based syn structure identifier.
+**1-preprocess** contains the codes to preprocess the dataset before being fed to the rule-based syn structure identifier.  
+**2-structure_identification** contains the codes to parse, filter children speech, and the rule-based syn structure identifier.

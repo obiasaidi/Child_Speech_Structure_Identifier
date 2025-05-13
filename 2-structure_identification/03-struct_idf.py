@@ -491,4 +491,4 @@ def struct_idf(input):
     return structure_counts  # Return structure_counts for the main function so the output would be the sentence structure and the number of its occurances
 
 df_filter['structure'] = df_filter['parsed'].apply(struct_idf)
-df_filter['parse_trees'] = sdf_filter['parsed'].apply(lambda doc: ' '.join([sent._.parse_string for sent in doc.sents])) # to retrieve const parse tree into the df
+df_filter['parse_trees'] = df_filter['parsed'].apply(lambda doc: ' '.join([sent._.parse_string for sent in doc.sents])) # to retrieve const parse tree into the df
